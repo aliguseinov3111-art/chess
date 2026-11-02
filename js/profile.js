@@ -4,7 +4,7 @@ import { thName } from './themes.js';
 import { toast } from './ui.js';
 import { unlock } from './sound.js';
 
-export const VERSION = '1.0';
+export const VERSION = '1.1';
 
 export async function profileScreen(root, ctx) {
   const li = levelInfo(), st = S.stats;
@@ -25,6 +25,8 @@ export async function profileScreen(root, ctx) {
       <div class="stat"><b>${st.lines}</b><span>дебютных линий</span></div>
       <div class="stat"><b>${st.end}</b><span>эндшпилей решено</span></div>
       <div class="stat"><b>${S.thr.ok}/${S.thr.n}</b><span>что под боем?</span></div>
+      <div class="stat"><b>${st.games}</b><span>партий с тренером</span></div>
+      <div class="stat"><b>${st.wins}</b><span>побед над тренером</span></div>
       <div class="stat"><b>${Object.values(S.lines).filter(e => e.b >= 3).length}</b><span>линий выучено</span></div>
     </div>
     ${themes.length ? `<h3>Слабые темы</h3><div class="card">${themes.slice(0, 5).map(([k, v]) => {

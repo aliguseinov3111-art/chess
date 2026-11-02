@@ -8,16 +8,17 @@ import { threatsScreen } from './threats.js';
 import { openingsScreen, lineScreen } from './openings.js';
 import { endgamesScreen, endgameSession } from './endgames.js';
 import { profileScreen } from './profile.js';
+import { coachScreen, gameScreen } from './game.js';
 
 const routes = {
   home: homeScreen, tactics: tacticsScreen, puzzles: puzzleSession, threats: threatsScreen,
-  openings: openingsScreen, line: lineScreen, endgames: endgamesScreen, endgame: endgameSession, profile: profileScreen,
+  openings: openingsScreen, line: lineScreen, endgames: endgamesScreen, endgame: endgameSession, coach: coachScreen, game: gameScreen, profile: profileScreen,
 };
 const tabOf = {
   home: 'home', tactics: 'tactics', puzzles: 'tactics', threats: 'tactics', openings: 'openings', line: 'openings',
-  endgames: 'endgames', endgame: 'endgames', profile: 'profile',
+  endgames: 'endgames', endgame: 'endgames', coach: 'coach', game: 'coach', profile: 'profile',
 };
-const SESSION = new Set(['puzzles', 'threats', 'line', 'endgame']);
+const SESSION = new Set(['puzzles', 'threats', 'line', 'endgame', 'game']);
 
 let cleanup = null, navId = 0;
 

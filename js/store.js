@@ -11,7 +11,8 @@ const DEF = () => ({
   puz: {}, lines: {}, end: {},                 // SRS: {b: корзина, d: день повтора, n: попыток}
   th: {},                                      // статистика по темам: {имя: {n, ok}}
   thr: { ok: 0, n: 0 },
-  stats: { puz: 0, clean: 0, combo: 0, bestCombo: 0, lines: 0, linesClean: 0, end: 0 },
+  stats: { puz: 0, clean: 0, combo: 0, bestCombo: 0, lines: 0, linesClean: 0, end: 0, games: 0, wins: 0, draws: 0, gclean: 0, bestAcc: 0, wonStrong: 0 },
+  game: null,                                  // незаконченная партия с тренером
   ach: {},
   set: { sound: true },
 });
@@ -177,6 +178,11 @@ export const ACH = [
   { id: 'r1000', icon: '📈', name: 'Рейтинг 1000', desc: 'Рейтинг тактики 1000', xp: 50, ok: () => S.rating >= 1000 },
   { id: 'r1200', icon: '🚀', name: 'Рейтинг 1200', desc: 'Рейтинг тактики 1200', xp: 100, ok: () => S.rating >= 1200 },
   { id: 'r1400', icon: '🌟', name: 'Рейтинг 1400', desc: 'Рейтинг тактики 1400', xp: 200, ok: () => S.rating >= 1400 },
+  { id: 'g1', icon: '🎓', name: 'Первая партия', desc: 'Сыграй партию с тренером', xp: 30, ok: () => S.stats.games >= 1 },
+  { id: 'w1', icon: '🏆', name: 'Первая победа', desc: 'Выиграй партию у тренера', xp: 60, ok: () => S.stats.wins >= 1 },
+  { id: 'gc', icon: '🛡', name: 'Чистая партия', desc: 'Партия без ошибок и зевков (от 10 ходов)', xp: 80, ok: () => S.stats.gclean >= 1 },
+  { id: 'a90', icon: '🎯', name: 'Точность 90%', desc: 'Сыграй партию с точностью от 90%', xp: 100, ok: () => S.stats.bestAcc >= 90 },
+  { id: 'ws', icon: '🔥', name: 'Укротитель', desc: 'Выиграй у уровня «Сильный»', xp: 250, ok: () => S.stats.wonStrong >= 1 },
   { id: 'v5', icon: '⭐', name: 'Уровень 5', desc: 'Достигни 5 уровня', xp: 50, ok: () => lvlAt(S.xp) >= 5 },
   { id: 'v10', icon: '💫', name: 'Уровень 10', desc: 'Достигни 10 уровня', xp: 150, ok: () => lvlAt(S.xp) >= 10 },
 ];

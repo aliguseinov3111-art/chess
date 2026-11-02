@@ -46,9 +46,11 @@ export async function homeScreen(root, ctx) {
         <span class="qx">${c}/${q.n}<br><small>+${q.xp} XP</small></span></button>`;
     }).join('')}</div>
     <button class="btn primary wide big" id="go">${next ? '▶ Продолжить тренировку' : '🎉 Всё выполнено · ещё задачи'}</button>
+    <button class="btn wide" id="go-coach">🎓 Сыграть партию с тренером</button>
     ${(due || lines || dueEnd) ? `<div class="card small">На повторение: ${[due ? `задач — ${due}` : '', lines ? `дебютных линий — ${lines}` : '', dueEnd ? `эндшпилей — ${dueEnd}` : ''].filter(Boolean).join(' · ')}</div>` : ''}
     <p class="mut small center">Серия дней засчитывается, если выполнено 2 задания из 4. За 7 дней серии дарим «заморозку» — она спасает серию при пропуске.</p>
   </div>`;
   root.querySelectorAll('.quest').forEach(b => { b.onclick = () => startQuest(b.dataset.q, ctx); });
+  $('#go-coach').onclick = () => ctx.go('coach');
   $('#go').onclick = () => (next ? startQuest(next.id, ctx) : ctx.go('puzzles', {}));
 }

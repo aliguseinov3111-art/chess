@@ -117,3 +117,24 @@ input[type=checkbox] { width: 24px; height: 24px; accent-color: var(--acc); }
 
 /* доска */
 cg-board { border-radius: 4px; }
+
+/* партия с тренером */
+.opt { border: 2px solid transparent; }
+.opt.on { border-color: var(--acc); background: #1c3a2c; }
+.btn.opt { flex: 1; }
+.card.lvl { margin: 8px 0; }
+.coach { padding: 0 14px; display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.cm { display: flex; gap: 10px; background: var(--card); border-radius: 14px; padding: 10px 12px; border-left: 4px solid var(--line); }
+.cm.ok { border-left-color: var(--acc); } .cm.warn { border-left-color: var(--acc2); } .cm.bad { border-left-color: var(--bad); } .cm.bot { border-left-color: var(--blue); }
+.cm .bd { font-size: 20px; font-weight: 800; min-width: 28px; text-align: center; line-height: 1.2; }
+.cm.ok .bd { color: var(--acc); } .cm.warn .bd { color: var(--acc2); } .cm.bad .bd { color: var(--bad); }
+.cm p { margin: 4px 0 0; font-size: 14px; }
+.cm .why { color: #ffb4b4; } .cm .best { color: #b9f08a; } .cm .bk { color: var(--blue); }
+.hist { margin: 10px 14px; }
+.hist summary { color: var(--mut); font-size: 14px; padding: 6px 0; }
+.hist .moves { margin: 6px 0 0; max-height: 260px; }
+.lesson { background: var(--card2); border-radius: 10px; padding: 8px 10px; margin: 6px 0; font-size: 14px; }
+.res h2 { margin: 0 0 8px; text-align: center; }
+.res .grid2 { margin: 6px 0; }
+.res .row { margin-top: 10px; }
+#tabs button span { white-space: nowrap; }
