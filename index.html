@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Шахматы">
+<meta name="theme-color" content="#0f1722">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="lib/chessground.base.css">
+<link rel="stylesheet" href="lib/chessground.brown.css">
+<link rel="stylesheet" href="lib/chessground.cburnett.css">
+<link rel="stylesheet" href="style.css">
+<title>Шахматный тренер</title>
+</head>
+<body>
+<div id="app">
+  <main id="screen"></main>
+  <nav id="tabs">
+    <button data-tab="home" class="on"><i>🏠</i><span>Главная</span></button>
+    <button data-tab="tactics"><i>♞</i><span>Тактика</span></button>
+    <button data-tab="openings"><i>📖</i><span>Дебюты</span></button>
+    <button data-tab="endgames"><i>♚</i><span>Эндшпиль</span></button>
+    <button data-tab="profile"><i>🏆</i><span>Профиль</span></button>
+  </nav>
+</div>
+<div id="toasts"></div>
+<div id="modal"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
