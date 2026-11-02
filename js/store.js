@@ -55,10 +55,10 @@ export function exportJson() { return JSON.stringify(S); }
 
 // ───── День и задания ─────
 export const QUESTS = [
-  { id: 'puz', n: 5, xp: 30, icon: '♞', text: 'Реши 5 тактических задач' },
+  { id: 'puz', n: 5, xp: 30, icon: '🧩', text: 'Реши 5 тактических задач' },
   { id: 'open', n: 1, xp: 30, icon: '📖', text: 'Пройди 1 дебютную линию' },
   { id: 'thr', n: 3, xp: 20, icon: '👁', text: '3 раза: что под боем?' },
-  { id: 'end', n: 1, xp: 30, icon: '♚', text: 'Реши 1 эндшпиль' },
+  { id: 'end', n: 1, xp: 30, icon: '🏁', text: 'Реши 1 эндшпиль' },
 ];
 
 export function today() {
@@ -160,7 +160,7 @@ export const dueCount = map => Object.values(map).filter(e => e.d <= dayNum()).l
 const cnt = (m, f) => Object.values(m).filter(f).length;
 export const ACH = [
   { id: 'p1', icon: '🎯', name: 'Первая задача', desc: 'Реши 1 задачу', xp: 10, ok: () => S.stats.puz >= 1 },
-  { id: 'p25', icon: '♟', name: '25 задач', desc: 'Реши 25 задач', xp: 25, ok: () => S.stats.puz >= 25 },
+  { id: 'p25', icon: '🧩', name: '25 задач', desc: 'Реши 25 задач', xp: 25, ok: () => S.stats.puz >= 25 },
   { id: 'p100', icon: '💯', name: 'Сотня', desc: 'Реши 100 задач', xp: 60, ok: () => S.stats.puz >= 100 },
   { id: 'p500', icon: '🏔', name: 'Пятьсот', desc: 'Реши 500 задач', xp: 200, ok: () => S.stats.puz >= 500 },
   { id: 'c5', icon: '🔥', name: 'Серия 5', desc: '5 задач подряд без ошибок', xp: 30, ok: () => S.stats.bestCombo >= 5 },
@@ -172,7 +172,7 @@ export const ACH = [
   { id: 'l5', icon: '📚', name: 'Репертуар', desc: '5 линий выучено (корзина 3+)', xp: 80, ok: () => cnt(S.lines, e => e.b >= 3) >= 5 },
   { id: 't25', icon: '👁', name: 'Зоркий глаз', desc: '25 верных «что под боем?»', xp: 40, ok: () => S.thr.ok >= 25 },
   { id: 't100', icon: '🦅', name: 'Орлиный взгляд', desc: '100 верных «что под боем?»', xp: 120, ok: () => S.thr.ok >= 100 },
-  { id: 'e1', icon: '♚', name: 'Первый эндшпиль', desc: 'Реши эндшпиль', xp: 20, ok: () => S.stats.end >= 1 },
+  { id: 'e1', icon: '🏁', name: 'Первый эндшпиль', desc: 'Реши эндшпиль', xp: 20, ok: () => S.stats.end >= 1 },
   { id: 'e5', icon: '👑', name: 'Эндшпильщик', desc: 'Освой 5 эндшпилей (корзина 2+)', xp: 100, ok: () => cnt(S.end, e => e.b >= 2) >= 5 },
   { id: 'r1000', icon: '📈', name: 'Рейтинг 1000', desc: 'Рейтинг тактики 1000', xp: 50, ok: () => S.rating >= 1000 },
   { id: 'r1200', icon: '🚀', name: 'Рейтинг 1200', desc: 'Рейтинг тактики 1200', xp: 100, ok: () => S.rating >= 1200 },
